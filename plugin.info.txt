@@ -1,0 +1,7 @@
+base    textrotate
+author  lisps
+email   
+date    2013-10-25
+name    TextRotate Plugin
+desc    converts a string into an image and rotates it
+url     http://dokuwiki.org/plugin:textrotate

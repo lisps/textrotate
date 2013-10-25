@@ -1,0 +1,10 @@
+/**
+ * DokuWiki Plugin textrotate (CSS Component) 
+ *
+ * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author  lisps    
+ */
+table.inline {
+ /*table-layout:fixed !important;*/
+
+}
