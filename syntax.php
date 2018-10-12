@@ -5,14 +5,7 @@
  * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author  lisps    
  */
-
-if(!defined('DOKU_INC')) define('DOKU_INC',realpath(dirname(__FILE__).'/../../').'/');
-if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
-require_once(DOKU_PLUGIN.'syntax.php');
-if (!defined('DOKU_LF')) define('DOKU_LF', "\n");
-if (!defined('DOKU_TAB')) define('DOKU_TAB', "\t");
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
-
+if (!defined('DOKU_INC')) die();
 /*
  * All DokuWiki plugins to extend the parser/rendering mechanism
  * need to inherit from this class
@@ -95,7 +88,7 @@ class syntax_plugin_textrotate extends DokuWiki_Syntax_Plugin {
 				$file = $basedir.'/'. $img_name .'.png';
 				
 				if(!file_exists($file)||true) {		
-					@mkdir($basedir,777,true);
+					@mkdir($basedir,755,true);
 		
 					$width = 15;			
 					$height = strlen($text)*10;

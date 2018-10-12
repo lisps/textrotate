@@ -7,8 +7,6 @@
  */
 
 if (!defined('DOKU_INC')) die();
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC . 'lib/plugins/');
-require_once (DOKU_PLUGIN . 'action.php');
 
 class action_plugin_textrotate extends DokuWiki_Action_Plugin {
 	/**
@@ -16,12 +14,16 @@ class action_plugin_textrotate extends DokuWiki_Action_Plugin {
 	 */
 	function register(Doku_Event_Handler $controller) {
 		$controller->register_hook('TOOLBAR_DEFINE', 'AFTER', $this, 'insert_button', array ());
+		
+		if(!function_exists('ImageCreate')) {
+		    msg('plugin textrotate: install image php-gd package', -1, '', '', MSG_ADMINS_ONLY);
+		}
 	}
 	
 	/**
 	 * Inserts the toolbar button
 	 */
-	function insert_button(&$event, $param) {
+	function insert_button(Doku_Event $event, $param) {
 		$event->data[] = array(	
 			'type'	=> 'format',
 			'title'	=> 'Vertikaler Text generieren',
