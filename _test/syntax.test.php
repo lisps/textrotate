@@ -16,8 +16,8 @@ class plugin_textrotate_syntax_test extends DokuWikiTest {
     
     public function test_basic_syntax() {
         $xhtml = p_wiki_xhtml('test:plugin_textrotate');
-        
-        $this->assertContains('<img class="textrotate" src="lib/images/tmp/', $xhtml);
+
+        $this->assertContains('<img class="textrotate" src="/lib/images/tmp/', $xhtml);
 
     }
     
