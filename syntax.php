@@ -108,8 +108,10 @@ class syntax_plugin_textrotate extends DokuWiki_Syntax_Plugin {
 				
 				}
 				//".$renderer->_xmlEntities($opt)."
-				
-				$renderer->doc .="<img class='textrotate' src='$file' alt='adsf' >";
+
+                $renderer->doc .=<<<TAG
+<img class="textrotate" src="/$file" alt="adsf" />
+TAG;
 			}
 			//$renderer->doc .="</span>";
 			//$renderer->doc .="<div style='clear:both'></div>";

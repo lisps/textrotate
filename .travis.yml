@@ -2,22 +2,26 @@ language: php
 
 matrix:
   include:
+    - php: "7.3"
+      env: DOKUWIKI=master
+    - php: "7.3"
+      env: DOKUWIKI=release_stable_2018-04-22b
     - php: "7.2"
       env: DOKUWIKI=master
     - php: "7.2"
-      env: DOKUWIKI=release_stable_2018-04-22a
+      env: DOKUWIKI=release_stable_2018-04-22b
     - php: "7.1"
       env: DOKUWIKI=master
     - php: "7.1"
-      env: DOKUWIKI=release_stable_2018-04-22a
+      env: DOKUWIKI=release_stable_2018-04-22b
     - php: "7.0"
       env: DOKUWIKI=master
     - php: "7.0"
-      env: DOKUWIKI=release_stable_2018-04-22a
+      env: DOKUWIKI=release_stable_2018-04-22b
     - php: "5.6"
       env: DOKUWIKI=master
     - php: "5.6"
-      env: DOKUWIKI=release_stable_2018-04-22a
+      env: DOKUWIKI=release_stable_2018-04-22b
     - php: "5.6"
       env: DOKUWIKI=release_stable_2017-02-19e
     - php: "5.6"
@@ -27,6 +31,6 @@ matrix:
 
 before_install: wget https://raw.github.com/splitbrain/dokuwiki-travis/master/travis.sh
 install: sh travis.sh
-script: 
+script:
   - cd _test
-  - phpunit --group plugin_textrotate
+  - ./phpunit.phar --stderr --group plugin_textrotate
