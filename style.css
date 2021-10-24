@@ -4,7 +4,12 @@
  * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author  lisps    
  */
-table.inline {
- /*table-layout:fixed !important;*/
+
+span.plugin_textrotate_rotated  {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
 
 }

@@ -3,10 +3,9 @@
  * DokuWiki Plugin textrotate (Action Component) 
  *
  * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author  lisps    
+ * @author  lisps  
+ * @author  peterfromearth  
  */
-
-if (!defined('DOKU_INC')) die();
 
 class action_plugin_textrotate extends DokuWiki_Action_Plugin {
 	/**
@@ -15,9 +14,6 @@ class action_plugin_textrotate extends DokuWiki_Action_Plugin {
 	function register(Doku_Event_Handler $controller) {
 		$controller->register_hook('TOOLBAR_DEFINE', 'AFTER', $this, 'insert_button', array ());
 		
-		if(!function_exists('ImageCreate')) {
-		    msg('plugin textrotate: install image php-gd package', -1, '', '', MSG_ADMINS_ONLY);
-		}
 	}
 	
 	/**
